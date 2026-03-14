@@ -9,6 +9,7 @@ class TilePos;
 // 4J Stu - Our default map (at zoom level 3) is 1024x1024 blocks (or 64 chunks)
 //#define LEVEL_MAX_WIDTH (29999984 / 16) //1,874,999 chunks
 #define LEVEL_MAX_WIDTH (6 * 64)        // Keep renderer sane
+
 #define LEVEL_WIDTH_CLASSIC 54
 #define LEVEL_WIDTH_SMALL 64
 #define LEVEL_WIDTH_MEDIUM (3*64)

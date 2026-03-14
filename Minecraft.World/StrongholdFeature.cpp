@@ -33,17 +33,15 @@ void StrongholdFeature::staticCtor()
 
 void StrongholdFeature::_init()
 {
-    distance = 32;
-    spread = 3;
+	distance = 32;
+	spread = 3;
 
-    strongholdPos_length = 1;
-
-    for (int i = 0; i < MAX_STRONGHOLDS; i++)
-    {
-        strongholdPos[i] = nullptr;
-    }
-
-    isSpotSelected = false;
+	// 4J added initialisers
+	for (int i = 0; i < strongholdPos_length; i++)
+	{
+		strongholdPos[i] = nullptr;
+	}
+	isSpotSelected = false;
 }
 
 StrongholdFeature::StrongholdFeature() : StructureFeature()
@@ -91,16 +89,6 @@ bool StrongholdFeature::isFeatureChunk(int x, int z,bool bIsSuperflat)
 {
 	if (!isSpotSelected)
 	{
-#ifdef _LARGE_WORLDS
-        if (level->dimension->getXZSize() >= LEVEL_WIDTH_INFINITE)
-        {
-            strongholdPos_length = 128;
-        }
-        else
-        {
-            strongholdPos_length = 1;
-        }
-#endif
 		Random random;
 
 		random.setSeed(level->getSeed());
